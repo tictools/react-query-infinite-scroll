@@ -1,6 +1,6 @@
-import styles from "./UserDetail.module.css";
+import styles from "./PokemonDetail.module.css";
 
-export const UserDetail = () => {
+export const PokemonDetail = () => {
   return (
     <section className={styles["wrapper"]}>
       <h2 className={styles["header"]}>User Detail</h2>

@@ -1,8 +1,8 @@
-import styles from "./UsersList.module.css";
-import { useUsersData } from "./hooks";
+import styles from "./PokemonsList.module.css";
+import { usePokemonData } from "./hooks";
 
-export const UsersList = () => {
-  const { loading, users } = useUsersData();
+export const PokemonsList = () => {
+  const { loading, users } = usePokemonData();
 
   return (
     <aside className={styles["wrapper"]}>
@@ -13,7 +13,7 @@ export const UsersList = () => {
       {!loading && (
         <ul>
           {users?.map((user) => (
-            <li key={user.id}>{user.email}</li>
+            <li key={user.id}>{user.name}</li>
           ))}
         </ul>
       )}

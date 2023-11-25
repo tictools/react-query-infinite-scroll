@@ -1,1 +1,0 @@
-export { useUsersData } from "./useUsersData";
