@@ -1,11 +1,11 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
+  line-height: 1.5;
 
+  background-color: #d2d2cf;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #d2d2cf;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,15 +21,17 @@
 }
 
 body {
-  margin: 0;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 100vw;
+  margin: 0;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 #root {
-  min-width: 100vw;
+  display: grid;
+  grid-template-rows: 11.25rem 3.5rem 1fr;
   min-height: 100vh;
+  min-width: 100vw;
 }
