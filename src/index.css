@@ -32,4 +32,6 @@ body {
 #root {
   min-width: 100vw;
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: 11.25rem 3.5rem 1fr;
 }
