@@ -1,0 +1,1 @@
+export { ForwardIcon } from "./ForwardIcon";

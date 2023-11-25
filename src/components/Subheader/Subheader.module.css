@@ -1,0 +1,9 @@
+.wrapper {
+  background-color: #ffffff;
+  color: grey;
+  height: 3.5rem;
+  padding: 0 12rem;
+  display: grid;
+  grid-template-columns: [nav] 8fr [actions] 4fr;
+  align-items: center;
+}
