@@ -4,3 +4,14 @@
   justify-content: space-between;
   padding-right: 8rem;
 }
+
+.wrapper svg {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.wrapper svg:hover {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
