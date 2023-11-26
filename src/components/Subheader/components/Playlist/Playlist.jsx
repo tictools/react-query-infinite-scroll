@@ -5,7 +5,7 @@ export const Playlist = () => {
   return (
     <div className={styles["wrapper"]}>
       <PrevIcon />
-      <div>User Placeholder</div>
+      <div>Pokemon Placeholder</div>
       <ForwardIcon />
     </div>
   );
