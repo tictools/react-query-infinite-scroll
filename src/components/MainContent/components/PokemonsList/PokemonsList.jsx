@@ -1,5 +1,7 @@
 import { useRef } from "react";
+import { Loader } from "../../../Loader";
 import styles from "./PokemonsList.module.css";
+import { List } from "./components";
 import { usePokemonData } from "./hooks";
 
 export const PokemonsList = () => {
@@ -10,17 +12,11 @@ export const PokemonsList = () => {
     <aside className={styles["wrapper"]}>
       <h2 className={styles["header"]}>Pokemons</h2>
 
-      {loading && <>Loading...</>}
+      {loading && <Loader />}
 
       {!loading && (
         <div ref={listRef} className={styles["list__wrapper"]}>
-          <ul className={styles["list"]}>
-            {pokemons?.map((pokemon) => (
-              <li className={styles["list__item"]} key={pokemon.id}>
-                {pokemon.name}
-              </li>
-            ))}
-          </ul>
+          <List pokemons={pokemons} />
         </div>
       )}
     </aside>
