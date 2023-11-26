@@ -10,6 +10,7 @@ export const usePokemonData = () => {
 
   useEffect(() => {
     setLoading(true);
+
     http.get(resourcePath).then((response) => {
       setLoading(false);
       setPokemons(response.results);
