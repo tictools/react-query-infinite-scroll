@@ -1,3 +1,3 @@
-export { Header } from "./Header";
-export { MainContent } from "./MainContent";
-export { Subheader } from "./Subheader";
+export { Header } from "@/ui/Header";
+export { MainContent } from "@/ui/MainContent";
+export { Subheader } from "@/ui/Subheader";
