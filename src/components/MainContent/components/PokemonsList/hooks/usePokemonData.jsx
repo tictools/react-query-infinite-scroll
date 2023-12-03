@@ -20,6 +20,8 @@ export const usePokemonData = () => {
   return {
     fetchNextPage,
     hasNextPage,
+    count: data?.pages[0]?.count,
     pokemons: data?.pages?.flatMap((page) => page.results),
+    currentLength: data?.pages?.flatMap((page) => page.results)?.length ?? 0,
   };
 };
