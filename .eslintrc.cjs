@@ -1,5 +1,5 @@
 const STATUS = {
-  ON: "on",
+  ERROR: "error",
   WARN: "warn",
   OFF: "off",
 };
@@ -12,6 +12,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
@@ -23,5 +24,8 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "react/prop-types": STATUS.OFF,
+    "@tanstack/query/exhaustive-deps": STATUS.ERROR,
+    "@tanstack/query/no-rest-destructuring": STATUS.WARN,
+    "@tanstack/query/stable-query-client": STATUS.ERROR,
   },
 };
