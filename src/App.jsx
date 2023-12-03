@@ -13,14 +13,12 @@ function App() {
   };
 
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <Header />
-        <Subheader />
-        <MainContent />
-        <ReactQueryDevtools {...defaultDevtoolsOptions} />
-      </QueryClientProvider>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Header />
+      <Subheader />
+      <MainContent />
+      <ReactQueryDevtools {...defaultDevtoolsOptions} />
+    </QueryClientProvider>
   );
 }
 
