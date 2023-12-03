@@ -2,6 +2,11 @@
   background-color: white;
   border-radius: 0.25rem;
   color: #242424;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .header {
@@ -12,15 +17,16 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 38rem;
+  height: 35rem;
   justify-content: center;
+  width: 100%;
 }
 
 .list {
   display: grid;
   gap: 0.5rem;
   grid-template-rows: auto;
-  height: 35rem;
+  height: 100%;
   overflow-y: auto;
   padding: 0 1rem;
   width: 100%;
