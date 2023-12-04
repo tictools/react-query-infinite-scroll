@@ -4,7 +4,8 @@
     "paths": {
       "@/ui/*": ["ui/*"],
       "@/services/*": ["services/*"],
-      "@/assets/*": ["assets/*"]
+      "@/assets/*": ["assets/*"],
+      "@/store/*": ["store/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
