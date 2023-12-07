@@ -1,6 +1,5 @@
-import { Actions } from "./components";
-import { Playlist } from "./components/Playlist";
-import styles from "./Subheader.module.css";
+import { Actions, Playlist } from "@/ui/Subheader/components";
+import styles from "@/ui/Subheader/Subheader.module.css";
 
 export const Subheader = () => {
   return (

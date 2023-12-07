@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { http } from "../../../../../services/http";
-import { BASE_URL, SUBPATHS_URL } from "../../../../../services/http/constants";
+import { http } from "../../../services/http";
+import { BASE_URL, SUBPATHS_URL } from "../../../services/http/constants";
 
 export const usePokemonData = () => {
   const initialPageParam = `${BASE_URL}/${SUBPATHS_URL.POKEMON}/?offset=0&limit=40`;
@@ -20,6 +20,8 @@ export const usePokemonData = () => {
   return {
     fetchNextPage,
     hasNextPage,
+    count: data?.pages[0]?.count ?? 0,
     pokemons: data?.pages?.flatMap((page) => page.results),
+    currentLength: data?.pages?.flatMap((page) => page.results)?.length ?? 0,
   };
 };
