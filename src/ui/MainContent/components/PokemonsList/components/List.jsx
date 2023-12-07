@@ -1,7 +1,7 @@
+import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
+import { usePokemonData } from "@/ui/MainContent/hooks";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import styles from "../PokemonsList.module.css";
-import { usePokemonData } from "../hooks/usePokemonData";
 
 export const List = () => {
   const { fetchNextPage, hasNextPage, pokemons } = usePokemonData();
