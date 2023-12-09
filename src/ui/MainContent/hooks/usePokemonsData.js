@@ -5,23 +5,25 @@ import { BASE_URL, SUBPATHS_URL } from "../../../services/http/constants";
 export const usePokemonsData = () => {
   const initialPageParam = `${BASE_URL}/${SUBPATHS_URL.POKEMON}/?offset=0&limit=40`;
 
-  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
-    queryKey: ["pokemons"],
-    queryFn: async ({ pageParam }) => {
-      const response = await http.get(pageParam);
-      return response;
-    },
-    initialPageParam,
-    getNextPageParam: (lastPage) => {
-      return lastPage.next;
-    },
-  });
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery({
+      queryKey: ["pokemons"],
+      queryFn: async ({ pageParam }) => {
+        const response = await http.get(pageParam);
+        return response;
+      },
+      initialPageParam,
+      getNextPageParam: (lastPage) => {
+        return lastPage.next;
+      },
+    });
 
   return {
+    count: data?.pages[0]?.count ?? 0,
+    currentLength: data?.pages?.flatMap((page) => page.results)?.length ?? 0,
     fetchNextPage,
     hasNextPage,
-    count: data?.pages[0]?.count ?? 0,
-    pokemons: data?.pages?.flatMap((page) => page.results),
-    currentLength: data?.pages?.flatMap((page) => page.results)?.length ?? 0,
+    isFetchingNextPage,
+    pokemons: data?.pages?.flatMap((page) => page.results) ?? [],
   };
 };

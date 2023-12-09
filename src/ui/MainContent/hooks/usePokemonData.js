@@ -1,8 +1,10 @@
 /* eslint-disable @tanstack/query/exhaustive-deps */
+import pokemonsStore from "@/store/index";
 import { useQuery } from "@tanstack/react-query";
 
-export const usePokemonData = (currentIndex) => {
-  const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+export const usePokemonData = () => {
+  const currentIndex = pokemonsStore((state) => state.currentIndex);
 
   const { data, error, isFetching, isSuccess } = useQuery({
     queryKey: ["pokemon", currentIndex],
