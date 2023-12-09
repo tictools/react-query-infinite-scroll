@@ -9,7 +9,7 @@ export const ListItem = ({ name, index }) => {
   };
 
   return (
-    <li className={styles["list__item"]} onClick={handleClick} role="button">
+    <li className={styles["list__item"]} onClick={handleClick}>
       {name}
     </li>
   );
