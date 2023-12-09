@@ -1,4 +1,3 @@
-/* eslint-disable @tanstack/query/exhaustive-deps */
 import pokemonsStore from "@/store/index";
 import { useQuery } from "@tanstack/react-query";
 
