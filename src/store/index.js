@@ -1,11 +1,14 @@
 import { create } from "zustand";
 
-const pokemonsStore = create((set, get) => {
+const pokemonsStore = create((set) => {
   return {
-    prev: get().current - 1,
-    current: 0,
-    next: get().current + 1,
-    getNext: () => set((state) => ({ current: state.next })),
+    currentIndex: 0,
+    getCurrent: (index) => {
+      set((state) => ({
+        ...state,
+        currentIndex: index,
+      }));
+    },
   };
 });
 
