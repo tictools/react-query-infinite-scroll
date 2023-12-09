@@ -1,7 +1,7 @@
-import { usePokemonData } from "@/ui/MainContent/hooks";
+import { usePokemonsData } from "@/ui/MainContent/hooks";
 
 export const Counter = () => {
-  const { currentLength, count } = usePokemonData();
+  const { currentLength, count } = usePokemonsData();
 
   return (
     <div>

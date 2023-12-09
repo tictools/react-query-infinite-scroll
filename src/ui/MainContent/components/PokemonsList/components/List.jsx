@@ -1,10 +1,11 @@
 import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
-import { usePokemonData } from "@/ui/MainContent/hooks";
+import { usePokemonsData } from "@/ui/MainContent/hooks";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { ListItem } from "./ListItem";
 
 export const List = () => {
-  const { fetchNextPage, hasNextPage, pokemons } = usePokemonData();
+  const { fetchNextPage, hasNextPage, pokemons } = usePokemonsData();
 
   const { ref: inViewRef, inView } = useInView();
 
@@ -16,10 +17,8 @@ export const List = () => {
 
   return (
     <ul className={styles["list"]}>
-      {pokemons?.map((pokemon) => (
-        <li className={styles["list__item"]} key={pokemon.name}>
-          {pokemon.name}
-        </li>
+      {pokemons?.map((pokemon, index) => (
+        <ListItem key={pokemon.name} index={index} name={pokemon.name} />
       ))}
       <div
         ref={inViewRef}
