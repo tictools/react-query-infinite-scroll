@@ -1,12 +1,12 @@
-import { ForwardIcon, PrevIcon } from "../../../icons";
 import styles from "./Playlist.module.css";
+import { CurrentPokemon, ForwardPokemon, PrevPokemon } from "./components";
 
 export const Playlist = () => {
   return (
     <div className={styles["wrapper"]}>
-      <PrevIcon />
-      <div>Pokemon Placeholder</div>
-      <ForwardIcon />
+      <PrevPokemon />
+      <CurrentPokemon />
+      <ForwardPokemon />
     </div>
   );
 };
