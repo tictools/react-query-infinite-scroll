@@ -17,7 +17,11 @@ export const PokemonDetail = () => {
 
       {!isFetching && (
         <>
-          <img loading="lazy" src={pokemon.sprites.front_default} />
+          <img
+            loading="lazy"
+            src={pokemon.sprites.front_default}
+            alt={pokemon.name}
+          />
           <h2 className={styles["header"]}>{pokemon.name.toUpperCase()}</h2>
         </>
       )}
