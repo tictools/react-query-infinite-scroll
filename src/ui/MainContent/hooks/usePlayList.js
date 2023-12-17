@@ -1,8 +1,8 @@
-import pokemonsStore from "@/store/index";
+import useStore from "@/store/index";
 import { usePokemonsData } from "./usePokemonsData";
 
 export const usePlaylist = () => {
-  const currentIndex = pokemonsStore((state) => state.currentIndex);
+  const currentIndex = useStore((state) => state.currentIndex);
   const { pokemons } = usePokemonsData();
 
   const prevPokemonName = (index) => {
@@ -13,7 +13,7 @@ export const usePlaylist = () => {
     return pokemons[index - 1]?.name;
   };
 
-  const forwardPokemonName = (index) => {
+  const nextPokemonName = (index) => {
     if (index + 1 > pokemons.length - 1) {
       return pokemons[0]?.name;
     }
@@ -22,7 +22,7 @@ export const usePlaylist = () => {
   };
 
   return {
-    prev: prevPokemonName(currentIndex),
-    forward: forwardPokemonName(currentIndex),
+    prevName: prevPokemonName(currentIndex),
+    nextName: nextPokemonName(currentIndex),
   };
 };

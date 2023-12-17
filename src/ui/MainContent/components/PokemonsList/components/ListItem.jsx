@@ -1,8 +1,8 @@
-import pokemonsStore from "@/store/index";
+import useStore from "@/store/index";
 import styles from "../PokemonsList.module.css";
 
 export const ListItem = ({ name, index }) => {
-  const getCurrent = pokemonsStore((state) => state.getCurrent);
+  const getCurrent = useStore((state) => state.getCurrent);
 
   const handleClick = () => {
     getCurrent(index);

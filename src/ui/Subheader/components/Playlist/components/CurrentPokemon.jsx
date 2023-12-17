@@ -2,7 +2,6 @@ import { usePokemonData } from "@/ui/MainContent/hooks";
 import styles from "@/ui/Subheader/Subheader.module.css";
 
 export const CurrentPokemon = () => {
-  console.log(styles);
   const { data: pokemon, isFetching } = usePokemonData();
   const currentPokemon = isFetching ? "fetching" : pokemon.name;
 
