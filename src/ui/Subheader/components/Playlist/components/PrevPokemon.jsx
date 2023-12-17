@@ -8,7 +8,7 @@ import { PrevIcon } from "@/ui/icons";
 
 export const PrevPokemon = () => {
   const { currentLength } = usePokemonsData();
-  const { prev: name } = usePlaylist();
+  const { prevName } = usePlaylist();
   const getPrev = useStoreSelectorBy("getPrev");
 
   const handlePrev = () => {
@@ -17,7 +17,7 @@ export const PrevPokemon = () => {
 
   return (
     <>
-      <p className={styles["playlist__navigation-item"]}>{name}</p>
+      <p className={styles["playlist__navigation-item"]}>{prevName}</p>
       <PrevIcon onClick={handlePrev} />
     </>
   );

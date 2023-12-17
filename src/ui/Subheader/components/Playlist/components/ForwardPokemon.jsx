@@ -8,7 +8,7 @@ import { ForwardIcon } from "@/ui/icons";
 
 export const ForwardPokemon = () => {
   const { currentLength } = usePokemonsData();
-  const { forward: name } = usePlaylist();
+  const { nextName } = usePlaylist();
   const getNext = useStoreSelectorBy("getNext");
 
   const handleNext = () => {
@@ -18,7 +18,7 @@ export const ForwardPokemon = () => {
   return (
     <>
       <ForwardIcon onClick={handleNext} />
-      <p className={styles["playlist__navigation-item"]}>{name}</p>
+      <p className={styles["playlist__navigation-item"]}>{nextName}</p>
     </>
   );
 };
