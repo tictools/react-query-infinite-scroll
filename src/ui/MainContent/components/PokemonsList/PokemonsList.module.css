@@ -44,3 +44,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.list__item:hover {
+  cursor: pointer;
+}
+
+.list__item--selected {
+  color: #fff;
+  background-color: #6fc6d8;
+}
