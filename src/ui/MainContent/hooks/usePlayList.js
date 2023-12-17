@@ -1,8 +1,8 @@
-import pokemonsStore from "@/store/index";
+import useStore from "@/store/index";
 import { usePokemonsData } from "./usePokemonsData";
 
 export const usePlaylist = () => {
-  const currentIndex = pokemonsStore((state) => state.currentIndex);
+  const currentIndex = useStore((state) => state.currentIndex);
   const { pokemons } = usePokemonsData();
 
   const prevPokemonName = (index) => {

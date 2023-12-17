@@ -1,9 +1,9 @@
-import pokemonsStore from "@/store/index";
+import useStore from "@/store/index";
 import { usePokemonData } from "../../hooks";
 import styles from "./PokemonDetail.module.css";
 
 export const PokemonDetail = () => {
-  const currentIndex = pokemonsStore((state) => state.currentIndex);
+  const currentIndex = useStore((state) => state.currentIndex);
 
   const { data: pokemon, error, isFetching } = usePokemonData(currentIndex);
 

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const pokemonsStore = create((set, get) => {
+const useStore = create((set, get) => {
   return {
     currentIndex: 0,
     getCurrent: (index) => {
@@ -32,4 +32,4 @@ const pokemonsStore = create((set, get) => {
   };
 });
 
-export default pokemonsStore;
+export default useStore;
