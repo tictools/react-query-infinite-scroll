@@ -3,5 +3,5 @@
   gap: 0.5rem;
   grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
   margin-top: 0.5rem;
-  padding: 0 12rem;
+  padding: 0 6rem;
 }

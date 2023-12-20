@@ -1,3 +1,3 @@
 export { CurrentPokemon } from "./CurrentPokemon";
-export { ForwardPokemon } from "./ForwardPokemon";
+export { NextPokemon } from "./NextPokemon";
 export { PrevPokemon } from "./PrevPokemon";

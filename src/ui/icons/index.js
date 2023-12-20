@@ -1,3 +1,3 @@
 export { BackIcon } from "@/ui/icons/BackIcon";
-export { ForwardIcon } from "@/ui/icons/ForwardIcon";
+export { NextIcon } from "@/ui/icons/NextIcon";
 export { PrevIcon } from "@/ui/icons/PrevIcon";

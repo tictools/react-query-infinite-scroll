@@ -1,0 +1,19 @@
+.loader {
+  animation: fadeOut 1.5s ease-in-out infinite;
+  color: #6fc6d8;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  width: 8rem;
+}
+
+@keyframes fadeOut {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
