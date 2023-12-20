@@ -1,12 +1,12 @@
 import styles from "./Playlist.module.css";
-import { CurrentPokemon, ForwardPokemon, PrevPokemon } from "./components";
+import { CurrentPokemon, NextPokemon, PrevPokemon } from "./components";
 
 export const Playlist = () => {
   return (
     <div className={styles["wrapper"]}>
       <PrevPokemon />
       <CurrentPokemon />
-      <ForwardPokemon />
+      <NextPokemon />
     </div>
   );
 };

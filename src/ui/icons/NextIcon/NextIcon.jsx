@@ -1,4 +1,4 @@
-export const ForwardIcon = ({ size = 24, color = "#242424", ...rest } = {}) => (
+export const NextIcon = ({ size = 24, color = "#242424", ...rest } = {}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -13,4 +13,4 @@ export const ForwardIcon = ({ size = 24, color = "#242424", ...rest } = {}) => (
   </svg>
 );
 
-export default ForwardIcon;
+export default NextIcon;
