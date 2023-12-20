@@ -10,6 +10,7 @@ export const ListItem = ({ name, index }) => {
     selectedIndex === index
       ? `${styles["list__item"]} ${styles["list__item--selected"]}`
       : styles["list__item"];
+
   const handleClick = () => {
     getCurrent(index);
   };

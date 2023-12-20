@@ -1,3 +1,4 @@
+import { Loader } from "@/ui/Loader";
 import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
 import { usePokemonsData } from "@/ui/MainContent/hooks";
 import { useEffect } from "react";
@@ -23,14 +24,13 @@ export const List = () => {
       <div
         ref={inViewRef}
         style={{
-          backgroundColor: "#FCB667",
-          borderRadius: "0.25rem",
-          height: "auto",
+          alignItems: "center",
+          display: "flex",
+          justifyContent: "center",
           width: "100%",
-          textAlign: "center",
         }}
       >
-        {hasNextPage ? "Fetching Pokemons..." : "No more pokemons to fetch"}
+        {hasNextPage ? <Loader /> : "No more pokemons to fetch"}
       </div>
     </ul>
   );
