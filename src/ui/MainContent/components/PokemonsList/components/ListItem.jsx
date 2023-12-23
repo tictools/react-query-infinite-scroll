@@ -1,11 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import useStore from "@/store/index";
 import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
 import { useAutoScroll, useStoreSelectorBy } from "@/ui/MainContent/hooks";
+import { useEffect, useRef } from "react";
 
 export const ListItem = ({ name, index }) => {
-  const getCurrent = useStore((state) => state.getCurrent);
+  const ref = useRef(null);
+  const { handleAutoScroll } = useAutoScroll();
+
   const selectedIndex = useStoreSelectorBy("currentIndex");
-  const [ref, handleAutoScroll] = useAutoScroll();
+  const getCurrent = useStore((state) => state.getCurrent);
+  const addElementRef = useStoreSelectorBy("addElementRef");
+
+  useEffect(() => {
+    addElementRef(ref);
+  }, [ref]);
 
   const itemClassName =
     selectedIndex === index
@@ -18,7 +27,12 @@ export const ListItem = ({ name, index }) => {
   };
 
   return (
-    <li ref={ref} className={itemClassName} onClick={handleClick}>
+    <li
+      ref={ref}
+      data-id={index}
+      className={itemClassName}
+      onClick={handleClick}
+    >
       {name}
     </li>
   );
