@@ -1,5 +1,5 @@
+import { useStoreSelectorBy } from "@/ui/MainContent/hooks";
 import { useCallback } from "react";
-import { useStoreSelectorBy } from "./useStoreSelectorBy";
 
 export const useAutoScroll = () => {
   const elementsRef = useStoreSelectorBy("elementsRef");
@@ -10,7 +10,7 @@ export const useAutoScroll = () => {
 
     elementsRef[currentIndex].current.scrollIntoView({
       behavior: "smooth",
-      block: "end",
+      block: "center",
     });
   }, [currentIndex, elementsRef]);
 

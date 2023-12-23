@@ -6,24 +6,23 @@ import { useEffect, useRef } from "react";
 
 export const ListItem = ({ name, index }) => {
   const ref = useRef(null);
-  const { handleAutoScroll } = useAutoScroll();
-
-  const selectedIndex = useStoreSelectorBy("currentIndex");
   const getCurrent = useStore((state) => state.getCurrent);
   const addElementRef = useStoreSelectorBy("addElementRef");
+  const currentIndex = useStoreSelectorBy("currentIndex");
+  const { handleAutoScroll } = useAutoScroll();
 
   useEffect(() => {
     addElementRef(ref);
-  }, [ref]);
+    handleAutoScroll();
+  }, [ref, currentIndex]);
 
   const itemClassName =
-    selectedIndex === index
+    currentIndex === index
       ? `${styles["list__item"]} ${styles["list__item--selected"]}`
       : styles["list__item"];
 
   const handleClick = () => {
     getCurrent(index);
-    handleAutoScroll();
   };
 
   return (

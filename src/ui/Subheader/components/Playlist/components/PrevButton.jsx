@@ -1,30 +1,20 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import {
-  useAutoScroll,
   usePokemonData,
   usePokemonsData,
   useStoreSelectorBy,
 } from "@/ui/MainContent/hooks";
+import styles from "@/ui/Subheader/components/Playlist/Playlist.module.css";
 import { PrevIcon } from "@/ui/icons";
-import { useCallback, useEffect } from "react";
-import styles from "../Playlist.module.css";
+import { useCallback } from "react";
 
 export const PrevButton = () => {
   const { currentLength } = usePokemonsData();
-  const { handleAutoScroll } = useAutoScroll();
   const { isFetching } = usePokemonData();
-  const currentIndex = useStoreSelectorBy("currentIndex");
-  const elementsRef = useStoreSelectorBy("elementsRef");
   const getPrev = useStoreSelectorBy("getPrev");
 
   const handlePrev = useCallback(() => {
     getPrev(currentLength);
-  }, [currentLength]);
-
-  useEffect(() => {
-    handleAutoScroll(elementsRef[currentIndex]);
-  }, [currentIndex]);
+  }, [currentLength, getPrev]);
 
   return (
     <button

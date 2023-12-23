@@ -1,30 +1,20 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import {
-  useAutoScroll,
   usePokemonData,
   usePokemonsData,
   useStoreSelectorBy,
 } from "@/ui/MainContent/hooks";
+import styles from "@/ui/Subheader/components/Playlist/Playlist.module.css";
 import { NextIcon } from "@/ui/icons";
-import { useEffect } from "react";
-import styles from "../Playlist.module.css";
+import { useCallback } from "react";
 
 export const NextButton = () => {
   const { currentLength } = usePokemonsData();
   const getNext = useStoreSelectorBy("getNext");
   const { isFetching } = usePokemonData();
-  const currentIndex = useStoreSelectorBy("currentIndex");
-  const { handleAutoScroll } = useAutoScroll();
-  const elementsRef = useStoreSelectorBy("elementsRef");
 
-  useEffect(() => {
-    handleAutoScroll(elementsRef[currentIndex]);
-  }, [currentIndex]);
-
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     getNext(currentLength);
-  };
+  }, [currentLength, getNext]);
 
   return (
     <button
