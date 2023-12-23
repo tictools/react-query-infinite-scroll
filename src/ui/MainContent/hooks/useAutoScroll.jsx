@@ -1,9 +1,10 @@
+import { STATE } from "@/store/state";
 import { useStoreSelectorBy } from "@/ui/MainContent/hooks";
 import { useCallback } from "react";
 
 export const useAutoScroll = () => {
-  const elementsRef = useStoreSelectorBy("elementsRef");
-  const currentIndex = useStoreSelectorBy("currentIndex");
+  const elementsRef = useStoreSelectorBy(STATE.elementsRef);
+  const currentIndex = useStoreSelectorBy(STATE.currentIndex);
 
   const handleAutoScroll = useCallback(() => {
     if (!elementsRef[currentIndex]?.current) return;

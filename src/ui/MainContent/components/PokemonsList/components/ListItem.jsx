@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import useStore from "@/store/index";
+import { STATE } from "@/store/state";
 import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
 import { useAutoScroll, useStoreSelectorBy } from "@/ui/MainContent/hooks";
 import { useEffect, useRef } from "react";
@@ -7,8 +8,8 @@ import { useEffect, useRef } from "react";
 export const ListItem = ({ name, index }) => {
   const ref = useRef(null);
   const getCurrent = useStore((state) => state.getCurrent);
-  const addElementRef = useStoreSelectorBy("addElementRef");
-  const currentIndex = useStoreSelectorBy("currentIndex");
+  const addElementRef = useStoreSelectorBy(STATE.addElementRef);
+  const currentIndex = useStoreSelectorBy(STATE.currentIndex);
   const { handleAutoScroll } = useAutoScroll();
 
   useEffect(() => {

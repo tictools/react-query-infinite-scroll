@@ -1,3 +1,4 @@
+import { STATE } from "@/store/state";
 import {
   usePokemonData,
   usePokemonsData,
@@ -9,7 +10,7 @@ import { useCallback } from "react";
 
 export const NextButton = () => {
   const { currentLength } = usePokemonsData();
-  const getNext = useStoreSelectorBy("getNext");
+  const getNext = useStoreSelectorBy(STATE.getNext);
   const { isFetching } = usePokemonData();
 
   const handleNext = useCallback(() => {

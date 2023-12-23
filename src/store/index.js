@@ -1,49 +1,20 @@
 import { create } from "zustand";
+import { ACTIONS_STATE } from "./actions";
+import { INITIAL_STATE } from "./initialState";
+import { STATE } from "./state";
 
-const useStore = create((set, get) => {
-  return {
-    currentIndex: 0,
+const useStore = create((set, get) => ({
+  [STATE.currentIndex]: INITIAL_STATE.currentIndex,
 
-    elementsRef: [],
+  [STATE.elementsRef]: INITIAL_STATE.elementsRef,
 
-    addElementRef: (ref) => {
-      set((state) => {
-        const updatedElementsRef = new Set([...state.elementsRef, ref]);
+  [STATE.addElementRef]: ACTIONS_STATE.addElementRef(set),
 
-        return {
-          ...state,
-          elementsRef: Array.from(updatedElementsRef),
-        };
-      });
-    },
+  [STATE.getCurrent]: ACTIONS_STATE.getCurrent(set, STATE.currentIndex),
 
-    getCurrent: (index) => {
-      set((state) => ({
-        ...state,
-        currentIndex: index,
-      }));
-    },
+  [STATE.getPrev]: ACTIONS_STATE.getPrev(set, get, STATE.currentIndex),
 
-    getPrev: (currentLength) => {
-      const prevIndex =
-        get().currentIndex - 1 < 0 ? currentLength - 1 : get().currentIndex - 1;
-
-      set((state) => ({
-        ...state,
-        currentIndex: prevIndex,
-      }));
-    },
-
-    getNext: (currentLength) => {
-      const nextIndex =
-        get().currentIndex + 1 > currentLength - 1 ? 0 : get().currentIndex + 1;
-
-      set((state) => ({
-        ...state,
-        currentIndex: nextIndex,
-      }));
-    },
-  };
-});
+  [STATE.getNext]: ACTIONS_STATE.getNext(set, get, STATE.currentIndex),
+}));
 
 export default useStore;
