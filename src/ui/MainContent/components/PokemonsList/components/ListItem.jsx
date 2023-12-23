@@ -1,10 +1,11 @@
 import useStore from "@/store/index";
-import { useStoreSelectorBy } from "@/ui/MainContent/hooks";
-import styles from "../PokemonsList.module.css";
+import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
+import { useAutoScroll, useStoreSelectorBy } from "@/ui/MainContent/hooks";
 
 export const ListItem = ({ name, index }) => {
   const getCurrent = useStore((state) => state.getCurrent);
   const selectedIndex = useStoreSelectorBy("currentIndex");
+  const [ref, handleAutoScroll] = useAutoScroll();
 
   const itemClassName =
     selectedIndex === index
@@ -13,10 +14,11 @@ export const ListItem = ({ name, index }) => {
 
   const handleClick = () => {
     getCurrent(index);
+    handleAutoScroll();
   };
 
   return (
-    <li className={itemClassName} onClick={handleClick}>
+    <li ref={ref} className={itemClassName} onClick={handleClick}>
       {name}
     </li>
   );
