@@ -1,19 +1,21 @@
+import { STATE } from "@/store/state";
 import {
   usePokemonData,
   usePokemonsData,
   useStoreSelectorBy,
 } from "@/ui/MainContent/hooks";
+import styles from "@/ui/Subheader/components/Playlist/Playlist.module.css";
 import { NextIcon } from "@/ui/icons";
-import styles from "../Playlist.module.css";
+import { useCallback } from "react";
 
 export const NextButton = () => {
   const { currentLength } = usePokemonsData();
-  const getNext = useStoreSelectorBy("getNext");
+  const getNext = useStoreSelectorBy(STATE.getNext);
   const { isFetching } = usePokemonData();
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     getNext(currentLength);
-  };
+  }, [currentLength, getNext]);
 
   return (
     <button
