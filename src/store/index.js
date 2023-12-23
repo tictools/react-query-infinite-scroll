@@ -3,6 +3,20 @@ import { create } from "zustand";
 const useStore = create((set, get) => {
   return {
     currentIndex: 0,
+
+    elementsRef: [],
+
+    addElementRef: (ref) => {
+      set((state) => {
+        const updatedElementsRef = new Set([...state.elementsRef, ref]);
+
+        return {
+          ...state,
+          elementsRef: Array.from(updatedElementsRef),
+        };
+      });
+    },
+
     getCurrent: (index) => {
       set((state) => ({
         ...state,
