@@ -1,3 +1,4 @@
+export { useAllowedSprites } from "./useAllowedSprites";
 export { useAutoScroll } from "./useAutoScroll";
 export { usePlaylist } from "./usePlayList";
 export { usePokemonData } from "./usePokemonData";
