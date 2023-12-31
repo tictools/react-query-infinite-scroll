@@ -1,4 +1,14 @@
 :root {
+  --color-black00: #00000000;
+  --color-black10: #0000001a;
+  --color-black20: #00000033;
+  --color-black30: #0000004d;
+  --color-black40: #00000066;
+  --color-black50: #00000080;
+  --color-black60: #00000099;
+  --color-black70: #000000b3;
+  --color-black80: #000000cc;
+  --color-black90: #000000e6;
   --color-black100: #000;
   --color-brown00: #5c361300;
   --color-brown10: #5c36131a;
