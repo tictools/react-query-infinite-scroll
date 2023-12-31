@@ -1,6 +1,6 @@
 import { Loader } from "@/ui/Loader";
 import { usePokemonData } from "@/ui/MainContent/hooks";
-import styles from "@/ui/Subheazder/Subheader.module.css";
+import styles from "@/ui/Subheader/Subheader.module.css";
 
 export const CurrentPokemon = () => {
   const { data: pokemon, isFetching } = usePokemonData();
