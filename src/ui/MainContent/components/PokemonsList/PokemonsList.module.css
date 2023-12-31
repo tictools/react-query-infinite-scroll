@@ -49,5 +49,5 @@
 
 .list__item--selected {
   color: var(--color-brown70);
-  background-color: var(--color-yellow-primary);
+  background-color: var(--color-yellow-primary100);
 }
