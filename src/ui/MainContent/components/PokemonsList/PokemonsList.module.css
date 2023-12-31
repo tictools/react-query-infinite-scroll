@@ -9,10 +9,6 @@
   justify-content: space-evenly;
 }
 
-.header {
-  text-align: center;
-}
-
 .list__wrapper {
   align-items: center;
   display: flex;
@@ -34,6 +30,8 @@
 
 .list__item {
   background-color: #d8816f;
+  background-color: var(--color-brown70);
+  color: var(--color-white100);
   border-radius: 0.25rem;
   font-weight: bold;
   height: 4rem;
@@ -50,6 +48,6 @@
 }
 
 .list__item--selected {
-  color: #fff;
-  background-color: #6fc6d8;
+  color: var(--color-brown70);
+  background-color: var(--color-yellow-primary);
 }
