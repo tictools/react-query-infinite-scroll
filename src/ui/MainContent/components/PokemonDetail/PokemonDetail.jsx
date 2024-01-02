@@ -7,10 +7,6 @@ export const PokemonDetail = () => {
   const currentIndex = useStore((state) => state.currentIndex);
 
   const { data: pokemon, error, isFetching } = usePokemonData(currentIndex);
-  console.log(
-    "🚀 ~ file: PokemonDetail.jsx:10 ~ PokemonDetail ~ pokemon:",
-    pokemon,
-  );
 
   if (error) {
     return <div>Error</div>;
