@@ -1,15 +1,12 @@
 import useStore from "@/store/index";
 import styles from "@/ui/MainContent/components/PokemonDetail/PokemonDetail.module.css";
-import { usePokemonData } from "../../hooks";
+import { usePokemonData } from "@/ui/MainContent/hooks";
+import { ArtWorkCard } from "./components";
 
 export const PokemonDetail = () => {
   const currentIndex = useStore((state) => state.currentIndex);
 
   const { data: pokemon, error, isFetching } = usePokemonData(currentIndex);
-  console.log(
-    "🚀 ~ file: PokemonDetail.jsx:10 ~ PokemonDetail ~ pokemon:",
-    pokemon,
-  );
 
   if (error) {
     return <div>Error</div>;
@@ -25,9 +22,12 @@ export const PokemonDetail = () => {
             thumbnails={pokemon.sprites.thumbnails}
             name={pokemon.name}
           /> */}
-          <div className={styles[`sprite__bg--${pokemon.species.color}`]}>
-            <img src={pokemon.sprites.artWork.default} alt={pokemon.name} />
-          </div>
+
+          <ArtWorkCard
+            src={pokemon.sprites.artWork.default}
+            alt={pokemon.name}
+            color={pokemon.species.color}
+          />
 
           <p>{`height: ${pokemon.height}`}</p>
           <p>{`weight: ${pokemon.weight}`}</p>
