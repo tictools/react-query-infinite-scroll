@@ -35,3 +35,43 @@
   height: inherit;
   width: inherit;
 }
+
+.sprite__bg--black {
+  background-color: var(--color-species-black);
+}
+
+.sprite__bg--blue {
+  background-color: var(--color-species-blue);
+}
+
+.sprite__bg--brown {
+  background-color: var(--color-species-brown);
+}
+
+.sprite__bg--green {
+  background-color: var(--color-species-green);
+}
+
+.sprite__bg--grey {
+  background-color: var(--color-species-grey);
+}
+
+.sprite__bg--pink {
+  background-color: var(--color-species-pink);
+}
+
+.sprite__bg--purple {
+  background-color: var(--color-species-purple);
+}
+
+.sprite__bg--red {
+  background-color: var(--color-species-red);
+}
+
+.sprite__bg--white {
+  background-color: var(--color-species-white);
+}
+
+.sprite__bg--yellow {
+  background-color: var(--color-species-yellow);
+}
