@@ -5,7 +5,7 @@ export const Sprites = (sprites) => {
   return {
     thumbnails: Thumbnails(sprites),
     artWork: {
-      defauilt: ArtWorkDefault(sprites),
+      default: ArtWorkDefault(sprites),
     },
   };
 };
