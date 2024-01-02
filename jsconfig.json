@@ -2,10 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@/ui/*": ["ui/*"],
-      "@/services/*": ["services/*"],
-      "@/assets/*": ["assets/*"],
-      "@/store/*": ["store/*"]
+      "@/*": ["."],
+      "@/ui/*": ["./ui/*"],
+      "@/services/*": ["./services/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/store/*": ["./store/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

@@ -1,20 +1,14 @@
 import { Loader } from "@/ui/Loader";
 import styles from "@/ui/MainContent/components/PokemonsList/PokemonsList.module.css";
-import { usePokemonsData } from "@/ui/MainContent/hooks";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import {
+  useFetchNextPageInView,
+  usePokemonsData,
+} from "@/ui/MainContent/hooks";
 import { ListItem } from "./ListItem";
 
 export const List = () => {
-  const { fetchNextPage, hasNextPage, pokemons } = usePokemonsData();
-
-  const { ref: inViewRef, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      fetchNextPage();
-    }
-  }, [fetchNextPage, inView]);
+  const { hasNextPage, pokemons } = usePokemonsData();
+  const { inViewRef } = useFetchNextPageInView();
 
   return (
     <ul className={styles["list"]}>

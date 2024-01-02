@@ -9,10 +9,16 @@
 }
 
 .playlist__current {
-  color: #000;
+  align-items: center;
+  background-color: var(--color-yellow-primary100);
+  border-radius: 4px;
+  color: var(--color-brown70);
+  display: flex;
   font-weight: bold;
-  text-transform: uppercase;
+  height: 2rem;
+  justify-content: center;
   text-align: center;
+  text-transform: uppercase;
   user-select: none;
   width: 8rem;
 }
