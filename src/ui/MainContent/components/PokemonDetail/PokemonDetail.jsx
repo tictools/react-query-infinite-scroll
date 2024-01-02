@@ -25,8 +25,9 @@ export const PokemonDetail = () => {
             thumbnails={pokemon.sprites.thumbnails}
             name={pokemon.name}
           /> */}
-
-          <img src={pokemon.sprites.artWork.default} alt={pokemon.name} />
+          <div className={styles[`sprite__bg--${pokemon.species.color}`]}>
+            <img src={pokemon.sprites.artWork.default} alt={pokemon.name} />
+          </div>
 
           <p>{`height: ${pokemon.height}`}</p>
           <p>{`weight: ${pokemon.weight}`}</p>
