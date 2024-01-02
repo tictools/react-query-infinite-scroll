@@ -1,12 +1,16 @@
 import useStore from "@/store/index";
 import styles from "@/ui/MainContent/components/PokemonDetail/PokemonDetail.module.css";
-import { SpritesCard } from "@/ui/MainContent/components/PokemonDetail/components";
+import { ThumbnailsCard } from "@/ui/MainContent/components/PokemonDetail/components/";
 import { usePokemonData } from "../../hooks";
 
 export const PokemonDetail = () => {
   const currentIndex = useStore((state) => state.currentIndex);
 
   const { data: pokemon, error, isFetching } = usePokemonData(currentIndex);
+  console.log(
+    "🚀 ~ file: PokemonDetail.jsx:10 ~ PokemonDetail ~ pokemon:",
+    pokemon,
+  );
 
   if (error) {
     return <div>Error</div>;
@@ -18,7 +22,10 @@ export const PokemonDetail = () => {
 
       {!isFetching && (
         <>
-          <SpritesCard sprites={pokemon.sprites} name={pokemon.name} />
+          <ThumbnailsCard
+            thumbnails={pokemon.sprites.thumbnails}
+            name={pokemon.name}
+          />
 
           <p>{`height: ${pokemon.height}`}</p>
           <p>{`weight: ${pokemon.weight}`}</p>
@@ -31,8 +38,8 @@ export const PokemonDetail = () => {
           ))}
 
           {pokemon.stats.map((stat) => (
-            <div key={stat.stat.name}>
-              <p>{`${stat.stat.name}: ${stat.base_stat}`} </p>
+            <div key={stat.name}>
+              <p>{`${stat.name}: ${stat.base}`} </p>
             </div>
           ))}
         </>

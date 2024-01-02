@@ -1,5 +1,4 @@
 export { useAddElementRef } from "./useAddElementRef";
-export { useAllowedSprites } from "./useAllowedSprites";
 export { useAutoScroll } from "./useAutoScroll";
 export { useFetchNextPageInView } from "./useFetchNextPageInView";
 export { useItemClassName } from "./useItemClassName";

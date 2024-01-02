@@ -1,2 +1,2 @@
-export { Sprite } from "./Sprite";
-export { SpritesCard } from "./SpritesCard";
+export { Thumbnail } from "./Thumbnail";
+export { ThumbnailsCard } from "./ThumbnailsCard";

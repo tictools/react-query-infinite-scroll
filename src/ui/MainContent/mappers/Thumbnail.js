@@ -1,4 +1,4 @@
-export const Sprite =
+export const Thumbnail =
   (sprites) =>
   ([key, src]) => ({
     key,
