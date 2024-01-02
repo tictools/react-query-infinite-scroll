@@ -1,1 +1,1 @@
-export { Sprite } from "@/ui/MainContent/mappers/Sprite";
+export { Sprites } from "@/ui/MainContent/mappers/Sprites";
