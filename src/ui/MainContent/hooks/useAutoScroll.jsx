@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { STATE } from "@/store/state";
 import { useStoreSelectorBy } from "@/ui/MainContent/hooks";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
-export const useAutoScroll = () => {
+export const useAutoScroll = ({ ref }) => {
   const elementsRef = useStoreSelectorBy(STATE.elementsRef);
   const currentIndex = useStoreSelectorBy(STATE.currentIndex);
 
@@ -15,5 +17,7 @@ export const useAutoScroll = () => {
     });
   }, [currentIndex, elementsRef]);
 
-  return { handleAutoScroll };
+  useEffect(() => {
+    handleAutoScroll();
+  }, [ref, currentIndex]);
 };
