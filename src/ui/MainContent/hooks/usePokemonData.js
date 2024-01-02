@@ -1,7 +1,13 @@
 import useStore from "@/store/index";
+import { Pokemon } from "@/ui/MainContent/mappers/Pokemon";
 import { useQuery } from "@tanstack/react-query";
 
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+import { http } from "@/services/http";
+
+const BASE_URL = "https://pokeapi.co/api/v2";
+const POKEMON_RESOURCE_PATH = "pokemon";
+const SPECIES_RESOURCE_PATH = "pokemon-species";
+
 export const usePokemonData = () => {
   const currentIndex = useStore((state) => state.currentIndex);
 
@@ -9,8 +15,14 @@ export const usePokemonData = () => {
     queryKey: ["pokemon", currentIndex],
 
     queryFn: async () => {
-      const response = await fetch(`${BASE_URL}/${currentIndex + 1}`);
-      return await response.json();
+      const promises = [
+        http.get(`${BASE_URL}/${POKEMON_RESOURCE_PATH}/${currentIndex + 1}`),
+        http.get(`${BASE_URL}/${SPECIES_RESOURCE_PATH}/${currentIndex + 1}`),
+      ];
+
+      const [pokemonDTO, speciesDTO] = await Promise.all(promises);
+
+      return Pokemon(pokemonDTO, speciesDTO);
     },
   });
 

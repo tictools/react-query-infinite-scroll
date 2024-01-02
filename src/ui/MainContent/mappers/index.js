@@ -1,1 +1,1 @@
-export { Sprites } from "@/ui/MainContent/mappers/Sprites";
+export { Pokemon } from "@/ui/MainContent/mappers/Pokemon";
