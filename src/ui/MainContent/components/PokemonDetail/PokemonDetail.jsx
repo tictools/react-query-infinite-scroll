@@ -18,11 +18,6 @@ export const PokemonDetail = () => {
 
       {!isFetching && (
         <>
-          {/* <ThumbnailsCard
-            thumbnails={pokemon.sprites.thumbnails}
-            name={pokemon.name}
-          /> */}
-
           <ArtWorkCard
             src={pokemon.sprites.artWork.default}
             alt={pokemon.name}
