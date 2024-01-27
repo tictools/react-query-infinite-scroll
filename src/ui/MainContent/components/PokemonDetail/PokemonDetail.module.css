@@ -35,3 +35,54 @@
   height: inherit;
   width: inherit;
 }
+
+.artwork__container {
+  border-radius: 1rem;
+  height: 300px;
+  width: 300px;
+}
+
+.artwork {
+  height: 275px;
+  width: 275px;
+}
+
+.artwork--bg-black {
+  background-color: var(--color-species-black);
+}
+
+.artwork--bg-blue {
+  background-color: var(--color-species-blue);
+}
+
+.artwork--bg-brown {
+  background-color: var(--color-species-brown);
+}
+
+.artwork--bg-green {
+  background-color: var(--color-species-green);
+}
+
+.artwork--bg-grey {
+  background-color: var(--color-species-grey);
+}
+
+.artwork--bg-pink {
+  background-color: var(--color-species-pink);
+}
+
+.artwork--bg-purple {
+  background-color: var(--color-species-purple);
+}
+
+.artwork--bg-red {
+  background-color: var(--color-species-red);
+}
+
+.artwork--bg-white {
+  background-color: var(--color-species-white);
+}
+
+.artwork--bg-yellow {
+  background-color: var(--color-species-yellow);
+}

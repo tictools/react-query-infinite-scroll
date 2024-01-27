@@ -1,6 +1,7 @@
 import { Species } from "@/ui/MainContent/mappers/Species";
 import { Sprites } from "@/ui/MainContent/mappers/Sprites";
 import { Stat } from "@/ui/MainContent/mappers/Stat";
+import { Type } from "./Type";
 
 export const Pokemon = (pokemonDTO, speciesDTO) => {
   return {
@@ -11,5 +12,6 @@ export const Pokemon = (pokemonDTO, speciesDTO) => {
     stats: pokemonDTO.stats.map(Stat),
     weight: pokemonDTO.weight,
     species: Species(speciesDTO),
+    types: pokemonDTO.types.map(Type),
   };
 };
