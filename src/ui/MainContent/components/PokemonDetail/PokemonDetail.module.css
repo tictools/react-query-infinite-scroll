@@ -39,6 +39,12 @@
 }
 
 .artwork__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  padding: 0 1.5rem 1rem;
   border-radius: 1rem;
   height: 325px;
   width: 300px;
@@ -87,4 +93,22 @@
 
 .artwork--bg-yellow {
   background-color: var(--color-species-yellow);
+}
+
+.artwork__types {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.artwork__type {
+  border: 1px solid white;
+  border-radius: 16px;
+  color: white;
+  min-width: 5rem;
+  padding: 0.25rem;
+  text-align: center;
+  font-weight: 800;
 }
