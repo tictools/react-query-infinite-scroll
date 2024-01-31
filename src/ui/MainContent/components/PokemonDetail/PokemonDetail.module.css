@@ -1,11 +1,13 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  padding-top: 2rem;
   background-color: white;
   border-radius: 0.25rem;
   color: #242424;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .header {
@@ -38,7 +40,7 @@
 
 .artwork__container {
   border-radius: 1rem;
-  height: 300px;
+  height: 325px;
   width: 300px;
 }
 

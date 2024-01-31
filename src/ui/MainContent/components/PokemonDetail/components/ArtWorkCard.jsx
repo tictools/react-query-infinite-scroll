@@ -1,18 +1,16 @@
 import styles from "@/ui/MainContent/components/PokemonDetail/PokemonDetail.module.css";
+import { Artwork } from "./Artwork";
+import { TypesList } from "./TypesList";
 
-export const ArtWorkCard = ({ src, name, color }) => {
+export const ArtWorkCard = ({ src, name, color, types }) => {
   const artWorkClassName = `${styles["artwork__container"]} ${
     styles[`artwork--bg-${color}`]
   }`;
 
   return (
     <div className={artWorkClassName}>
-      <img
-        className={`${styles["artwork"]}`}
-        src={src}
-        loading="lazy"
-        alt={name}
-      />
+      <Artwork name={name} src={src} />
+      <TypesList types={types} />
     </div>
   );
 };
