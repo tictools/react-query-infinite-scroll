@@ -10,7 +10,6 @@ export const PokemonDetail = () => {
   const currentIndex = useStore((state) => state.currentIndex);
 
   const { data: pokemon, error, isFetching } = usePokemonData(currentIndex);
-  console.log("🚀 ~ PokemonDetail ~ pokemon:", pokemon);
 
   if (error) {
     return <div>Error</div>;
@@ -22,6 +21,7 @@ export const PokemonDetail = () => {
 
       {!isFetching && (
         <>
+          <StatsList stats={pokemon.stats} />
           <ArtWorkCard
             src={pokemon.sprites.artWork.default}
             alt={pokemon.name}
@@ -30,7 +30,6 @@ export const PokemonDetail = () => {
           />
           <MeasuresList height={pokemon.height} weight={pokemon.weight} />
           <AbilitiesList abilities={pokemon.abilities} />
-          <StatsList stats={pokemon.stats} />
         </>
       )}
     </section>
