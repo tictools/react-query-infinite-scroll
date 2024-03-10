@@ -8,9 +8,11 @@ export const ArtWorkCard = ({ src, name, color, types }) => {
   }`;
 
   return (
-    <div className={artWorkClassName}>
-      <Artwork color={color} name={name} src={src} />
+    <>
+      <div className={artWorkClassName}>
+        <Artwork color={color} name={name} src={src} />
+      </div>
       <TypesList types={types} />
-    </div>
+    </>
   );
 };

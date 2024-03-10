@@ -3,7 +3,7 @@ import { Type } from "./Type";
 
 export const TypesList = ({ types }) => {
   return (
-    <ul className={styles["artwork__types"]}>
+    <ul className={styles["artwork__types-container"]}>
       {types.map((type) => (
         <Type key={type} type={type} />
       ))}
