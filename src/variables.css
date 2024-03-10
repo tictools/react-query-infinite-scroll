@@ -1,5 +1,14 @@
 :root {
   --color-black100: #000;
+  --color-black90: #101010;
+  --color-black80: #202020;
+  --color-black70: #303030;
+  --color-black60: #404040;
+  --color-black50: #505050;
+  --color-black40: #606060;
+  --color-black30: #707070;
+  --color-black20: #808080;
+  --color-black10: #909090;
   --color-white100: #fff;
   --color-shadow-hard: #888;
   --color-shadow-soft: #bbb;

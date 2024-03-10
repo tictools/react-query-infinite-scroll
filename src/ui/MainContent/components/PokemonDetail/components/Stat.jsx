@@ -34,7 +34,7 @@ export const Stat = ({ stat }) => {
         value={normalizeToBase255(value)}
         variant="solid"
       >
-        <span className={styles["stat__label"]}>{`${value}`}</span>
+        <span className={styles["stat__value"]}>{`${value}`}</span>
       </CircularProgress>
     </li>
   );
