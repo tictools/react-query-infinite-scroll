@@ -48,11 +48,20 @@
   border-radius: 1rem;
   height: 325px;
   width: 300px;
+  box-shadow: 0 0 1rem var(--color-shadow-hard);
 }
 
 .artwork {
   height: 275px;
   width: 275px;
+}
+
+.artwork--shadow-white {
+  filter: drop-shadow(0 0 0.5rem var(--color-shadow-white));
+}
+
+.artwork--shadow-soft {
+  filter: drop-shadow(0 0 0.5rem var(--color-shadow-hard));
 }
 
 .artwork--bg-black {
@@ -93,6 +102,10 @@
 
 .artwork--bg-yellow {
   background-color: var(--color-species-yellow);
+}
+
+.artwork--bg-gray {
+  background-color: var(--color-species-gray);
 }
 
 .artwork__types {

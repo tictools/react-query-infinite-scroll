@@ -9,7 +9,7 @@ export const ArtWorkCard = ({ src, name, color, types }) => {
 
   return (
     <div className={artWorkClassName}>
-      <Artwork name={name} src={src} />
+      <Artwork color={color} name={name} src={src} />
       <TypesList types={types} />
     </div>
   );
