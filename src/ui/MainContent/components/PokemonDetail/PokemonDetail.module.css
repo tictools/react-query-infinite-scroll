@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   padding-top: 2rem;
-  background-color: white;
   border-radius: 0.25rem;
   color: #242424;
 }
@@ -59,11 +58,14 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: 100%;
+  width: 18rem;
+}
+
+.artwork__type-item {
+  flex-grow: 1;
 }
 
 .artwork__type {
-  min-width: 5rem;
   padding: 0.25rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -74,59 +76,6 @@
   border: 1px solid var(--color-white100);
   border-radius: 0.75rem;
 }
-
-.artwork--shadow-white {
-  filter: drop-shadow(0 0 0.5rem var(--color-shadow-white));
-}
-
-.artwork--shadow-soft {
-  filter: drop-shadow(0 0 0.5rem var(--color-shadow-hard));
-}
-
-.artwork--bg-black {
-  background-color: var(--color-species-black);
-}
-
-.artwork--bg-blue {
-  background-color: var(--color-species-blue);
-}
-
-.artwork--bg-brown {
-  background-color: var(--color-species-brown);
-}
-
-.artwork--bg-green {
-  background-color: var(--color-species-green);
-}
-
-.artwork--bg-grey {
-  background-color: var(--color-species-grey);
-}
-
-.artwork--bg-pink {
-  background-color: var(--color-species-pink);
-}
-
-.artwork--bg-purple {
-  background-color: var(--color-species-purple);
-}
-
-.artwork--bg-red {
-  background-color: var(--color-species-red);
-}
-
-.artwork--bg-white {
-  background-color: var(--color-species-white);
-}
-
-.artwork--bg-yellow {
-  background-color: var(--color-species-yellow);
-}
-
-.artwork--bg-gray {
-  background-color: var(--color-species-gray);
-}
-
 .artwork__type-normal {
   background-color: var(--color-type-normal);
 }
@@ -195,6 +144,58 @@
   background-color: var(--color-type-fairy);
 }
 
+.artwork--shadow-white {
+  filter: drop-shadow(0 0 0.5rem var(--color-shadow-white));
+}
+
+.artwork--shadow-soft {
+  filter: drop-shadow(0 0 0.5rem var(--color-shadow-hard));
+}
+
+.artwork--bg-black {
+  background-color: var(--color-species-black);
+}
+
+.artwork--bg-blue {
+  background-color: var(--color-species-blue);
+}
+
+.artwork--bg-brown {
+  background-color: var(--color-species-brown);
+}
+
+.artwork--bg-green {
+  background-color: var(--color-species-green);
+}
+
+.artwork--bg-grey {
+  background-color: var(--color-species-grey);
+}
+
+.artwork--bg-pink {
+  background-color: var(--color-species-pink);
+}
+
+.artwork--bg-purple {
+  background-color: var(--color-species-purple);
+}
+
+.artwork--bg-red {
+  background-color: var(--color-species-red);
+}
+
+.artwork--bg-white {
+  background-color: var(--color-species-white);
+}
+
+.artwork--bg-yellow {
+  background-color: var(--color-species-yellow);
+}
+
+.artwork--bg-gray {
+  background-color: var(--color-species-gray);
+}
+
 .stat__list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -227,4 +228,30 @@
   font-weight: 400;
   text-transform: upperCase;
   color: var(--color-black40);
+}
+
+.size__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 12rem;
+}
+
+.size__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  border: 1px solid var(--color-black10);
+  border-radius: 0.25rem;
+}
+
+.size__item > p {
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-left: 1px solid var(--color-black10);
 }

@@ -1,10 +1,11 @@
 import useStore from "@/store/index";
-import styles from "@/ui/MainContent/components/PokemonDetail/PokemonDetail.module.css";
 import { usePokemonData } from "@/ui/MainContent/hooks";
 import { ArtWorkCard } from "./components";
 import { AbilitiesList } from "./components/AbilitiesList";
-import { MeasuresList } from "./components/MeasuresList";
+import { SizeInfo } from "./components/SizeData.jsx";
 import { StatsList } from "./components/StatsList";
+
+import styles from "@/ui/MainContent/components/PokemonDetail/PokemonDetail.module.css";
 
 export const PokemonDetail = () => {
   const currentIndex = useStore((state) => state.currentIndex);
@@ -22,13 +23,13 @@ export const PokemonDetail = () => {
       {!isFetching && (
         <>
           <StatsList stats={pokemon.stats} />
+          <SizeInfo height={pokemon.height} weight={pokemon.weight} />
           <ArtWorkCard
             src={pokemon.sprites.artWork.default}
             alt={pokemon.name}
             color={pokemon.species.color}
             types={pokemon.types}
           />
-          <MeasuresList height={pokemon.height} weight={pokemon.weight} />
           <AbilitiesList abilities={pokemon.abilities} />
         </>
       )}
