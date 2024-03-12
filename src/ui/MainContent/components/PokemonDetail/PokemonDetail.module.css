@@ -54,15 +54,11 @@
 }
 
 .artwork__types-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  gap: 0.25rem;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
   width: 18rem;
-}
-
-.artwork__type-item {
-  flex-grow: 1;
 }
 
 .artwork__type {
@@ -74,73 +70,74 @@
   text-transform: uppercase;
   line-height: normal;
   border: 1px solid var(--color-white100);
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
 }
-.artwork__type-normal {
+
+.artwork__type--normal {
   background-color: var(--color-type-normal);
 }
 
-.artwork__type-fire {
+.artwork__type--fire {
   background-color: var(--color-type-fire);
 }
 
-.artwork__type-water {
+.artwork__type--water {
   background-color: var(--color-type-water);
 }
 
-.artwork__type-electric {
+.artwork__type--electric {
   background-color: var(--color-type-electric);
 }
 
-.artwork__type-grass {
+.artwork__type--grass {
   background-color: var(--color-type-grass);
 }
 
-.artwork__type-ice {
+.artwork__type--ice {
   background-color: var(--color-type-ice);
 }
 
-.artwork__type-fighting {
+.artwork__type--fighting {
   background-color: var(--color-type-fighting);
 }
 
-.artwork__type-poison {
+.artwork__type--poison {
   background-color: var(--color-type-poison);
 }
 
-.artwork__type-ground {
+.artwork__type--ground {
   background-color: var(--color-type-ground);
 }
 
-.artwork__type-flying {
+.artwork__type--flying {
   background-color: var(--color-type-flying);
 }
 
-.artwork__type-psychic {
+.artwork__type--psychic {
   background-color: var(--color-type-psychic);
 }
 
-.artwork__type-bug {
+.artwork__type--bug {
   background-color: var(--color-type-bug);
 }
 
-.artwork__type-rock {
+.artwork__type--rock {
   background-color: var(--color-type-rock);
 }
 
-.artwork__type-ghost {
+.artwork__type--ghost {
   background-color: var(--color-type-ghost);
 }
 
-.artwork__type-dragon {
+.artwork__type--dragon {
   background-color: var(--color-type-dragon);
 }
 
-.artwork__type-steel {
+.artwork__type--steel {
   background-color: var(--color-type-steel);
 }
 
-.artwork__type-fairy {
+.artwork__type--fairy {
   background-color: var(--color-type-fairy);
 }
 
@@ -254,4 +251,36 @@
   font-size: 0.75rem;
   font-weight: 600;
   border-left: 1px solid var(--color-black10);
+}
+
+.abilities__container {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  padding: 0 1rem;
+  width: 18rem;
+  border: 1px solid var(--color-black10);
+  border-radius: 0.25rem;
+}
+
+.ability__item {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-black30);
+  text-transform: uppercase;
+}
+
+.ability__item > p {
+  flex-grow: 1;
+}
+
+.ability__item:not(:last-child) {
+  border-bottom: 1px solid var(--color-black10);
 }
