@@ -5,8 +5,7 @@
   justify-content: flex-start;
   justify-self: center;
   gap: 1rem;
-  padding: 1rem;
-  height: 38rem;
+  padding: 1.5rem;
   width: 24rem;
   border-radius: 0.25rem;
   color: #242424;
@@ -49,7 +48,6 @@
   border-radius: 1rem;
   height: 18rem;
   width: 18rem;
-  box-shadow: 0 0 0.5rem var(--color-shadow-hard);
 }
 
 .artwork {
