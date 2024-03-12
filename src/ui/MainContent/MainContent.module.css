@@ -1,7 +1,8 @@
 .wrapper {
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  grid-template-columns: 8fr 4fr;
   margin-top: 0.5rem;
-  padding: 0 6rem;
+  padding: 2rem 6rem;
+  background-color: var(--color-white100);
 }
