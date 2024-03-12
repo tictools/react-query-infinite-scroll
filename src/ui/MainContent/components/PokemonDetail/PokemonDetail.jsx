@@ -2,7 +2,7 @@ import useStore from "@/store/index";
 import { usePokemonData } from "@/ui/MainContent/hooks";
 import { ArtWorkCard } from "./components";
 import { AbilitiesList } from "./components/AbilitiesList";
-import { SizeInfo } from "./components/SizeData.jsx";
+import { SizeInfo } from "./components/SizeInfo.jsx";
 import { StatsList } from "./components/StatsList";
 
 import styles from "@/ui/MainContent/components/PokemonDetail/PokemonDetail.module.css";
